@@ -5,8 +5,6 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    
-
     <nav
       className="navbar navbar-expand-lg border-bottom"
       style={{ backgroundColor: "#FFF" }}
@@ -35,20 +33,36 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" to="/signup">Signup</Link>
+              <Link className="nav-link active" to="/signup">
+                Signup
+              </Link>
             </li>
+
             <li className="nav-item">
-              <Link className="nav-link active" to="/about">About</Link>
+              <Link className="nav-link active" to="/about">
+                About
+              </Link>
             </li>
+
             <li className="nav-item">
-              <Link className="nav-link active" to="/product">Product</Link>
+              <Link className="nav-link active" to="/product">
+                Product
+              </Link>
             </li>
+
             <li className="nav-item">
-              <Link className="nav-link active" to="/pricing">Pricing</Link>
+              <Link className="nav-link active" to="/pricing">
+                Pricing
+              </Link>
             </li>
+
             <li className="nav-item">
-              <Link className="nav-link active" to="/support">Support</Link>
+              <Link className="nav-link active" to="/support">
+                Support
+              </Link>
             </li>
+
+            {/* Login */}
             <li className="nav-item">
               <button
                 className="btn btn-primary ms-2"
@@ -57,19 +71,22 @@ const Navbar = () => {
                 Login
               </button>
             </li>
+
+            {/* Logout (khali aa bhega karyu chhe) */}
+            <li className="nav-item">
+              <button
+                className="btn btn-danger ms-2"
+                onClick={() => {
+                  localStorage.removeItem("user");
+                  window.location.href = "/login";
+                }}
+              >
+                Logout
+              </button>
+            </li>
           </ul>
         </div>
       </div>
-      <button
-  className="btn btn-danger ms-2"
-  onClick={() => {
-    localStorage.removeItem("user");
-    window.location.href = "/login";
-  }}
->
-  Logout
-</button>
-
     </nav>
   );
 };
